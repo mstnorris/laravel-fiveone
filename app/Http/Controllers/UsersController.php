@@ -6,7 +6,7 @@ use FiveOne\Http\Transformers\UserTransformer;
 use FiveOne\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UsersController extends ApiController
 {
     /*
      * @var FiveOne\Transformers\UserTransformer
@@ -43,11 +43,7 @@ class UsersController extends Controller
         $user = User::find($id);
 
         if ( ! $user ) {
-            return response()->json([
-                'error' => [
-                    'message' => 'User not found'
-                ]
-            ], 404);
+            return $this->respondNotFound('User not found');
         }
 
         return response()->json([
