@@ -28,16 +28,29 @@ class ApiController extends Controller {
         return $this;
     }
 
-    public function respondNotFound($message = 'Not Found!')
-    {
-        return $this->setStatusCode(404)->respondWithError($message);
-    }
-
+    /**
+     * @param $data
+     * @param array $headers
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function respond($data, $headers = [])
     {
         return response()->json($data, $this->getStatusCode(), $headers);
     }
 
+    /**
+     * @param string $message
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function respondNotFound($message = 'Not Found!')
+    {
+        return $this->setStatusCode(404)->respondWithError($message);
+    }
+
+    /**
+     * @param $message
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function respondWithError($message)
     {
         return $this->respond([
@@ -46,5 +59,10 @@ class ApiController extends Controller {
                 'status_code' => $this->getStatusCode()
             ]
         ]);
+    }
+
+    public function respondInternalError($message = 'Internal Error!')
+    {
+        return $this->setStatusCode(500)->respondWithError($message);
     }
 }

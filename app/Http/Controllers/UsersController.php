@@ -27,7 +27,7 @@ class UsersController extends ApiController
     {
         $users = User::all();
 
-        return response()->json([
+        return $this->respond([
             'data' => $this->userTransformer->transformCollection($users->all())
         ]);
     }
@@ -46,9 +46,9 @@ class UsersController extends ApiController
             return $this->respondNotFound('User not found');
         }
 
-        return response()->json([
+        return $this->respond([
             'data' => $this->userTransformer->transform($user)
-        ], 200);
+        ]);
 
     }
 }
