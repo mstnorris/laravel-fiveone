@@ -1,4 +1,4 @@
-<?php namespace App\Http;
+<?php namespace FiveOne\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
-        'App\Http\Middleware\VerifyCsrfToken',
+        'FiveOne\Http\Middleware\VerifyCsrfToken',
     ];
 
     /**
@@ -24,8 +24,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => 'App\Http\Middleware\Authenticate',
+        'auth' => 'FiveOne\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
+        'guest' => 'FiveOne\Http\Middleware\RedirectIfAuthenticated',
     ];
 }

@@ -11,11 +11,13 @@
 |
 */
 
-$factory->define('App\User', function ($faker) {
+$factory->define('FiveOne\User', function ($faker) {
     return [
+        'string_id' => str_random(6),
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => str_random(10),
+        'active' => $faker->boolean(65),
         'remember_token' => str_random(10),
     ];
 });

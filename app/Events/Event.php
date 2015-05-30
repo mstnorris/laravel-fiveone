@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace FiveOne\Events;
 
 abstract class Event
 {

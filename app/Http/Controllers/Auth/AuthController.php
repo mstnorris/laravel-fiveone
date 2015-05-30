@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php namespace FiveOne\Http\Controllers\Auth;
 
-use App\User;
+use FiveOne\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use FiveOne\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller

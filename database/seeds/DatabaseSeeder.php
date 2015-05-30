@@ -2,9 +2,17 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder {
+
+    /**
+     * @var array
+     */
+    private $tables = array(
+        'users'
+    );
+
     /**
      * Run the database seeds.
      *
@@ -14,6 +22,21 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call('UserTableSeeder');
+        $this->cleanDatabase();
+
+        // $this->call('ConstantsTableSeeder');
+        // $this->call('JobsTableSeeder');
+        $this->call('UsersTableSeeder');
     }
+
+    public function cleanDatabase()
+    {
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        foreach ($this->tables as $table) {
+            DB::table($table)->truncate();
+        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+    }
+
 }

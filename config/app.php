@@ -140,9 +140,15 @@ return [
         /*
          * Application Service Providers...
          */
-        'App\Providers\AppServiceProvider',
-        'App\Providers\EventServiceProvider',
-        'App\Providers\RouteServiceProvider',
+        'FiveOne\Providers\AppServiceProvider',
+        'FiveOne\Providers\EventServiceProvider',
+        'FiveOne\Providers\RouteServiceProvider',
+
+        /*
+         * Third-Party Service Providers
+         */
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Vinkla\Hashids\HashidsServiceProvider',
 
     ],
 
@@ -191,6 +197,12 @@ return [
         'URL'       => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
+
+        /*
+         * Third-Party Aliases
+         */
+
+        'Hashids' => 'Vinkla\Hashids\Facades\Hashids',
 
     ],
 
