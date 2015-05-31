@@ -1,0 +1,19 @@
+body {
+    margin: 2em 0;
+    color: #34495e;
+}
+
+.row {
+    margin: 1em 0;
+}
+
+a {
+    color: #34495e;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a.active {
+    color: #d35400;
+    text-decoration: underline;
+}

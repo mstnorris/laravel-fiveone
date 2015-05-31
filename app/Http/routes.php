@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+get('users', 'PagesController@users');
+
 Route::group(['prefix' => 'api/v1'], function() {
     get('users/{id}/jobs', 'JobsController@index');
     Route::resource('users', 'UsersController');
     Route::resource('jobs', 'JobsController', ['only' => ['index', 'show']]);
-
 });

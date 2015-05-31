@@ -13,7 +13,7 @@
 
 $factory->define('FiveOne\User', function ($faker) {
     return [
-        'string_id' => str_random(6),
+        'string_id' => strtoupper(str_random(6)),
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => str_random(10),
