@@ -29,21 +29,19 @@ class JobsController extends ApiController
      */
     public function index($userId = null)
     {
-        $jobs = $userId ? User::find($userId)->jobs : Job::all();
+        $jobs = $this->getJobs($userId);
         return $this->respond([
             'data' => $this->jobTransformer->transformCollection($jobs->all())
         ]);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * @param $userId
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function show($id)
+    public function getJobs($userId)
     {
-        //
+        return $userId ? User::findOrFail($userId)->jobs : Job::all();
     }
 
 }
