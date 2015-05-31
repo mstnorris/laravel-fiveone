@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'api/v1'], function() {
-   Route::resource('users', 'UsersController');
+    Route::resource('users', 'UsersController');
+    Route::resource('jobs', 'JobsController', ['only' => ['index', 'show']]);
 });

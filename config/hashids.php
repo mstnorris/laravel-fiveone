@@ -49,10 +49,10 @@ return [
             'alphabet' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
         ],
 
-        'one' => [
+        'job_id' => [
             'salt' => 'HwtNVtXT8wlXoSNnKrubuSDJqcwm9eIAVlLWwBG1rZjcwOCDjHEWrHH0SLQlhLkB',
-            'length' => '16',
-            'alphabet' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+            'length' => '5',
+            'alphabet' => 'HMN34P67R9TWCXYF'
         ],
 
         'two' => [

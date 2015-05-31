@@ -1,6 +1,8 @@
 <?php namespace FiveOne\Http\Controllers;
 
 
+use Illuminate\Http\Response;
+
 class ApiController extends Controller {
 
 
@@ -44,7 +46,7 @@ class ApiController extends Controller {
      */
     public function respondNotFound($message = 'Not Found!')
     {
-        return $this->setStatusCode(404)->respondWithError($message);
+        return $this->setStatusCode(Response::HTTP_NOT_FOUND)->respondWithError($message);
     }
 
     /**
@@ -63,6 +65,6 @@ class ApiController extends Controller {
 
     public function respondInternalError($message = 'Internal Error!')
     {
-        return $this->setStatusCode(500)->respondWithError($message);
+        return $this->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR)->respondWithError($message);
     }
 }

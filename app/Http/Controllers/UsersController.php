@@ -51,4 +51,9 @@ class UsersController extends ApiController
         ]);
 
     }
+
+    public function store()
+    {
+        dd('store');
+    }
 }

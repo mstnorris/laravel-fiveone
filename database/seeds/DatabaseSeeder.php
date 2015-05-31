@@ -10,6 +10,8 @@ class DatabaseSeeder extends Seeder {
      * @var array
      */
     private $tables = array(
+        'job_user',
+        'jobs',
         'users'
     );
 
@@ -25,8 +27,9 @@ class DatabaseSeeder extends Seeder {
         $this->cleanDatabase();
 
         // $this->call('ConstantsTableSeeder');
-        // $this->call('JobsTableSeeder');
         $this->call('UsersTableSeeder');
+        $this->call('JobsTableSeeder');
+        $this->call('JobUserTableSeeder');
     }
 
     public function cleanDatabase()

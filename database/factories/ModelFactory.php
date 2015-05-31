@@ -21,3 +21,11 @@ $factory->define('FiveOne\User', function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define('FiveOne\Job', function ($faker) {
+    return [
+        'string_id' => str_random(5),
+        'name' => $faker->name,
+        'address' => $faker->streetAddress
+    ];
+});
